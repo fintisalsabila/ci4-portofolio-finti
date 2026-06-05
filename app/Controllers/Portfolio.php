@@ -19,9 +19,8 @@ class Portfolio extends BaseController
             'certifications' => $this->getCertifications(),
             'skills' => $this->getSkills(),
             'experiences' => $this->getExperiences(),
-            'freelance_projects' => $this->getFreelanceProjects(),
+            'all_projects' => $this->getAllProjects(),
             'education' => $this->getEducation(),
-            'projects' => $this->getProjects(),
             'contact_info' => $this->getContactInfo()
         ];
         
@@ -73,13 +72,37 @@ class Portfolio extends BaseController
         ];
     }
     
-    private function getFreelanceProjects()
+    private function getAllProjects()
     {
         return [
-            ['name' => 'Sistem KPI Karyawan PT DKB', 'tech' => 'PHP, MySQL, JavaScript', 'description' => 'Sistem penilaian kinerja dengan input penilaian, sub-kriteria, perhitungan bobot, dan hasil akhir'],
-            ['name' => 'Web Administrasi Gereja', 'tech' => 'CodeIgniter, MySQL', 'description' => 'Pendaftaran baptis, jemaat baru, dan jemaat keluar'],
-            ['name' => 'Portal Berita', 'tech' => 'PHP Native, MySQL', 'description' => 'Manajemen artikel, kategori, dan editor konten'],
-            ['name' => 'Web Servis Motor', 'tech' => 'Laravel, Bootstrap', 'description' => 'Booking service, riwayat perbaikan, manajemen pelanggan']
+            // Prodi Websites
+            ['name' => 'Website Prodi SIIO', 'tech' => 'CodeIgniter 4, PHP, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Sistem Informasi dan Otomasi - website resmi program studi dengan fitur informasi akademik, pengumuman, dan profil dosen'],
+            ['name' => 'Website Prodi TRO', 'tech' => 'Laravel, PHP, MySQL, Tailwind', 'type' => 'web', 'description' => 'Teknik Rekayasa Otomasi - website dengan manajemen konten, galeri kegiatan, dan informasi kurikulum'],
+            ['name' => 'Website Prodi TIO', 'tech' => 'CodeIgniter 4, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Teknik Informatika dan Otomasi - portal informasi akademik terintegrasi'],
+            ['name' => 'Website Prodi TKP', 'tech' => 'PHP, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Teknik Konstruksi - manajemen konten berita dan informasi akademik'],
+            ['name' => 'Website Prodi ABO', 'tech' => 'Laravel, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Administrasi Bisnis Online - portal informasi mahasiswa dan manajemen berita'],
+            
+            // Professional Systems
+            ['name' => 'Sistem KPI Karyawan PT DKB', 'tech' => 'PHP, MySQL, JavaScript', 'type' => 'fullstack', 'description' => 'Sistem penilaian kinerja dengan input penilaian, sub-kriteria, perhitungan bobot, dan hasil akhir untuk evaluasi performa terstruktur'],
+            ['name' => 'Web Administrasi Gereja', 'tech' => 'CodeIgniter, MySQL', 'type' => 'web', 'description' => 'Pendaftaran baptis, jemaat baru, dan jemaat keluar untuk pengelolaan data anggota secara digital'],
+            ['name' => 'Portal Berita', 'tech' => 'PHP Native, MySQL', 'type' => 'web', 'description' => 'Manajemen artikel, kategori, dan editor konten untuk publikasi berita'],
+            ['name' => 'Web Servis Motor', 'tech' => 'Laravel, Bootstrap', 'type' => 'web', 'description' => 'Booking service, riwayat perbaikan, dan manajemen pelanggan untuk efisiensi operasional'],
+            
+            // Certification & Assessment
+            ['name' => 'Web LSP', 'tech' => 'CodeIgniter 4, MySQL, Bootstrap, AJAX', 'type' => 'fullstack', 'description' => 'Lembaga Sertifikasi Profesi - sistem manajemen sertifikasi dengan pendaftaran peserta, penjadwalan ujian, dan penerbitan sertifikat digital'],
+            ['name' => 'Web SPM', 'tech' => 'Laravel, MySQL, Chart.js, Bootstrap', 'type' => 'fullstack', 'description' => 'Sistem Penjaminan Mutu - dashboard monitoring akreditasi, laporan, dan manajemen data standar mutu'],
+            ['name' => 'Assessment TVET Platform', 'tech' => 'CodeIgniter 4, MySQL, jQuery', 'type' => 'fullstack', 'description' => 'Platform penilaian kompetensi TVET dengan modul ujian online, penilaian asesor, dan laporan kompetensi'],
+            
+            // Ticketing & E-Learning
+            ['name' => 'Web E-Ticketing', 'tech' => 'Laravel, MySQL, QR Code, Midtrans', 'type' => 'fullstack', 'description' => 'Sistem tiket elektronik dengan pembelian online, QR code verification, dashboard admin, dan laporan penjualan real-time'],
+            ['name' => 'Web Pendaftaran Mahasiswa Baru', 'tech' => 'PHP, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Registrasi online, validasi data, dan cetak bukti pendaftaran untuk digitalisasi proses penerimaan'],
+            
+            // Android Apps
+            ['name' => 'Android E-Learning App', 'tech' => 'Kotlin, Retrofit, Firebase', 'type' => 'android', 'description' => 'Aplikasi e-learning dengan materi multimedia, kuis interaktif, progress tracking, dan sertifikat digital'],
+            ['name' => 'Android Audit Tools Mekanik', 'tech' => 'Kotlin, Android, REST API', 'type' => 'android', 'description' => 'Aplikasi audit tools mekanik yang mengurangi penggunaan formulir manual hingga 80%'],
+            ['name' => 'Android Order Tools Mekanik', 'tech' => 'Kotlin, Retrofit, MySQL', 'type' => 'android', 'description' => 'Sistem pemesanan alat untuk mempermudah dan mempercepat respon hingga 40%'],
+            ['name' => 'Android Pendaftaran Training', 'tech' => 'Kotlin, Node.js, MySQL', 'type' => 'android', 'description' => 'Aplikasi pendaftaran training mekanik untuk menggantikan proses manual dan mencegah duplikasi data'],
+            ['name' => 'Android Pengadaan Barang', 'tech' => 'Kotlin, Retrofit, MySQL', 'type' => 'android', 'description' => 'Aplikasi pengadaan barang dengan fitur permintaan, persetujuan prodi, manajemen stok, dan pelaporan']
         ];
     }
     
@@ -88,8 +111,8 @@ class Portfolio extends BaseController
         return [
             ['name' => 'Back-End Developer', 'provider' => 'DBS Foundation', 'date' => 'Sep 2024', 'icon' => 'blue'],
             ['name' => 'Full Stack Web Development', 'provider' => 'Harisenin Coding Camp', 'date' => '2024', 'icon' => 'green'],
-            ['name' => 'Meta Android Developer', 'provider' => 'Coursera', 'date' => 'Aug 2023', 'icon' => 'purple'],
-            ['name' => 'IT Support Google Specialization', 'provider' => 'Coursera', 'date' => 'Aug 2023', 'icon' => 'blue'],
+            ['name' => 'Meta Android Developer', 'provider' => 'Coursera (Meta)', 'date' => 'Aug 2023', 'icon' => 'purple'],
+            ['name' => 'IT Support Google Specialization', 'provider' => 'Coursera (Google)', 'date' => 'Aug 2023', 'icon' => 'blue'],
             ['name' => 'Mobile Development and JavaScript', 'provider' => 'Coursera', 'date' => 'Aug 2023', 'icon' => 'green']
         ];
     }
@@ -97,12 +120,12 @@ class Portfolio extends BaseController
     private function getSkills()
     {
         return [
-            'tools' => ['Android Studio', 'Visual Studio Code', 'XAMPP', 'Postman', 'GitHub & Git'],
-            'backend' => ['Node.js (Express)', 'PHP (Native, Laravel, CodeIgniter)', 'RESTful API Design', 'MySQL Database', 'Query Optimization'],
+            'mobile' => ['Kotlin', 'Java', 'Android Studio', 'XML Layout', 'Retrofit', 'MVVM', 'Firebase'],
+            'backend' => ['PHP', 'Laravel', 'CodeIgniter 4', 'Node.js', 'Express.js', 'RESTful API', 'MySQL'],
             'frontend' => ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'jQuery', 'AJAX', 'React'],
-            'mobile' => ['Kotlin', 'Java', 'XML Layout Design', 'Retrofit', 'MVVM', 'Firebase'],
-            'system' => ['Server Configuration', 'Database Administration', 'API Integration', 'System Troubleshooting'],
-            'softskills' => ['Problem-solving', 'Teamwork', 'Time Management', 'Attention to Detail', 'Communication', 'Adaptability', 'Discipline', 'Shift Work']
+            'tools' => ['Git & GitHub', 'VS Code', 'Postman', 'XAMPP', 'Android Studio'],
+            'system' => ['Server Config', 'DB Admin', 'API Integration', 'Troubleshooting'],
+            'softskills' => ['Problem-Solving', 'Teamwork', 'Time Management', 'Communication', 'Adaptability', 'Detail-Oriented', 'Discipline', 'Shift Work']
         ];
     }
     
@@ -112,22 +135,6 @@ class Portfolio extends BaseController
             ['degree' => 'D3/S1 Informatika/Teknologi Informasi', 'university' => 'Universitas/Politeknik Jakarta', 'year' => '2020-2024', 'icon' => 'university'],
             ['degree' => 'Full Stack Web Development', 'university' => 'Harisenin Coding Camp', 'year' => 'Bootcamp Intensif', 'icon' => 'code'],
             ['degree' => 'Back-End Development', 'university' => 'DBS Foundation', 'year' => 'Sep 2024', 'icon' => 'graduation-cap']
-        ];
-    }
-    
-    private function getProjects()
-    {
-        return [
-            ['name' => 'Website Prodi SIIO', 'tech' => 'CodeIgniter 4, PHP, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Sistem Informasi dan Otomasi - website resmi program studi dengan fitur informasi akademik'],
-            ['name' => 'Website Prodi TRO', 'tech' => 'Laravel, PHP, MySQL, Tailwind', 'type' => 'web', 'description' => 'Teknik Rekayasa Otomasi - website dengan manajemen konten dan galeri kegiatan'],
-            ['name' => 'Website Prodi TIO', 'tech' => 'CodeIgniter 4, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Teknik Informatika dan Otomasi - portal informasi akademik terintegrasi'],
-            ['name' => 'Website Prodi TKP', 'tech' => 'PHP, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Teknik Konstruksi - manajemen konten berita dan informasi akademik'],
-            ['name' => 'Website Prodi ABO', 'tech' => 'Laravel, MySQL, Bootstrap', 'type' => 'web', 'description' => 'Administrasi Bisnis Online - portal informasi mahasiswa dan manajemen berita'],
-            ['name' => 'Web LSP', 'tech' => 'CodeIgniter 4, MySQL, Bootstrap, AJAX', 'type' => 'fullstack', 'description' => 'Lembaga Sertifikasi Profesi - sistem manajemen sertifikasi dengan pendaftaran peserta'],
-            ['name' => 'Web SPM', 'tech' => 'Laravel, MySQL, Chart.js, Bootstrap', 'type' => 'fullstack', 'description' => 'Sistem Penjaminan Mutu - dashboard monitoring akreditasi'],
-            ['name' => 'Assessment TVET', 'tech' => 'CodeIgniter 4, MySQL, jQuery', 'type' => 'fullstack', 'description' => 'Platform penilaian kompetensi TVET dengan ujian online'],
-            ['name' => 'Web E-Ticketing', 'tech' => 'Laravel, MySQL, QR Code, Midtrans', 'type' => 'fullstack', 'description' => 'Sistem tiket elektronik dengan pembelian online dan verifikasi QR'],
-            ['name' => 'Android E-Learning', 'tech' => 'Kotlin, Retrofit, Firebase', 'type' => 'android', 'description' => 'Aplikasi e-learning dengan materi multimedia dan kuis interaktif']
         ];
     }
     

@@ -2,11 +2,11 @@
 <html lang="id" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Finti Sasa Sabila – Full Stack Developer & Android Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 /* ==================== CSS VARIABLES ==================== */
@@ -14,6 +14,7 @@
   --font-display: 'Syne', sans-serif;
   --font-mono: 'DM Mono', monospace;
   --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Inter', sans-serif;
 
   /* Dark Theme */
   --bg-primary: #080c14;
@@ -73,6 +74,58 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
+
+/* ==================== TYPOGRAPHY UPDATES ==================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Stats Row Styling */
+.stats-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
 
 /* ==================== SCROLLBAR ==================== */
 ::-webkit-scrollbar { width: 6px; }
@@ -271,7 +324,7 @@ nav {
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 .hero-title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.05;
@@ -400,7 +453,7 @@ nav {
   margin-bottom: 1rem;
 }
 .profile-name {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -419,31 +472,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-}
-.stats-row {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-.stat-item {
-  flex: 1;
-  text-align: center;
-  padding: 0.6rem;
-  background: var(--bg-secondary);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-}
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--accent);
-}
-.stat-label {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  letter-spacing: 0.3px;
 }
 .tech-badges {
   display: flex;
@@ -492,7 +520,7 @@ section {
   margin-bottom: 0.5rem;
 }
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   font-weight: 800;
   letter-spacing: -1px;
@@ -551,8 +579,9 @@ section {
 }
 .highlight-text strong {
   display: block;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
 }
@@ -598,7 +627,7 @@ section {
   color: var(--accent);
 }
 .skill-cat-name {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -682,7 +711,7 @@ section {
   margin-bottom: 0.6rem;
 }
 .timeline-company {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -765,7 +794,7 @@ section {
   margin-bottom: 1rem;
 }
 .edu-degree {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -820,8 +849,9 @@ section {
 .cert-icon.green { background: rgba(67,233,123,0.15); color: var(--accent-3); }
 .cert-icon.purple { background: rgba(240,147,251,0.15); color: var(--accent-warm); }
 .cert-name {
+  font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
 }
@@ -876,7 +906,7 @@ section {
   box-shadow: 0 20px 50px var(--glow);
 }
 .project-img {
-  height: 180px;
+  height: 160px;
   background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
@@ -911,7 +941,7 @@ section {
   padding: 1.3rem;
 }
 .project-title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -970,7 +1000,7 @@ section {
   align-items: start;
 }
 .contact-info h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--text-primary);
@@ -1156,6 +1186,7 @@ footer {
   .skills-grid { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1228,7 +1259,7 @@ footer {
         <div class="profile-location"><i class="fas fa-map-marker-alt"></i> Jakarta Utara, Indonesia</div>
         <div class="stats-row">
           <div class="stat-item">
-            <div class="stat-num">15+</div>
+            <div class="stat-num">19+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div class="stat-item">
@@ -1324,13 +1355,9 @@ footer {
           <span class="skill-cat-name">Mobile Development</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">Android Studio</span>
-          <span class="skill-tag">XML Layout</span>
-          <span class="skill-tag">Retrofit</span>
-          <span class="skill-tag">MVVM</span>
-          <span class="skill-tag">Firebase</span>
+          <?php foreach($skills['mobile'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="skill-category">
@@ -1339,14 +1366,9 @@ footer {
           <span class="skill-cat-name">Backend & Server</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">Laravel</span>
-          <span class="skill-tag">CodeIgniter 4</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">RESTful API</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">XAMPP</span>
+          <?php foreach($skills['backend'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="skill-category">
@@ -1355,13 +1377,9 @@ footer {
           <span class="skill-cat-name">Frontend</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">Bootstrap</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">jQuery</span>
-          <span class="skill-tag">AJAX</span>
-          <span class="skill-tag">React</span>
+          <?php foreach($skills['frontend'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="skill-category">
@@ -1370,11 +1388,9 @@ footer {
           <span class="skill-cat-name">Tools & Platforms</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Git & GitHub</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">Android Studio</span>
-          <span class="skill-tag">XAMPP</span>
+          <?php foreach($skills['tools'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="skill-category">
@@ -1383,10 +1399,9 @@ footer {
           <span class="skill-cat-name">System Admin</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Server Config</span>
-          <span class="skill-tag">DB Admin</span>
-          <span class="skill-tag">API Integration</span>
-          <span class="skill-tag">Troubleshooting</span>
+          <?php foreach($skills['system'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="skill-category">
@@ -1395,14 +1410,9 @@ footer {
           <span class="skill-cat-name">Soft Skills</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Problem-Solving</span>
-          <span class="skill-tag">Teamwork</span>
-          <span class="skill-tag">Time Management</span>
-          <span class="skill-tag">Communication</span>
-          <span class="skill-tag">Adaptability</span>
-          <span class="skill-tag">Detail-Oriented</span>
-          <span class="skill-tag">Discipline</span>
-          <span class="skill-tag">Shift Work</span>
+          <?php foreach($skills['softskills'] as $skill): ?>
+          <span class="skill-tag"><?= $skill ?></span>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
@@ -1428,7 +1438,7 @@ footer {
             <span class="timeline-company"><?= $exp['company'] ?></span>
             <span class="timeline-period"><?= $exp['period'] ?></span>
           </div>
-          <div class="timeline-role"><?= $exp['title'] ?> · Jakarta</div>
+          <div class="timeline-role"><?= $exp['title'] ?></div>
           <ul class="timeline-desc">
             <?php foreach($exp['description'] as $desc): ?>
             <li><?= $desc ?></li>
@@ -1441,50 +1451,12 @@ footer {
   </div>
 </section>
 
-<!-- ==================== FREELANCE PROJECTS ==================== -->
-<section id="freelance">
-  <div class="section-container">
-    <div class="section-header fade-up">
-      <div>
-        <div class="section-number">04 / freelance</div>
-        <h2 class="section-title">Freelance Portfolio</h2>
-      </div>
-      <div class="section-line"></div>
-    </div>
-    <div class="projects-grid fade-up">
-      <?php foreach($freelance_projects as $project): ?>
-      <div class="project-card">
-        <div class="project-img">
-          <div class="project-img-gradient"></div>
-          <div class="project-img-placeholder"><i class="fas fa-briefcase"></i></div>
-          <span class="project-type-tag">Freelance</span>
-        </div>
-        <div class="project-body">
-          <div class="project-title"><?= $project['name'] ?></div>
-          <p class="project-desc"><?= $project['description'] ?></p>
-          <div class="project-stack">
-            <?php 
-            $techs = explode(', ', $project['tech']);
-            foreach($techs as $tech): ?>
-            <span class="stack-tag"><?= $tech ?></span>
-            <?php endforeach; ?>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
 <!-- ==================== EDUCATION ==================== -->
 <section id="education">
   <div class="section-container">
     <div class="section-header fade-up">
       <div>
-        <div class="section-number">05 / education</div>
+        <div class="section-number">04 / education</div>
         <h2 class="section-title">Education</h2>
       </div>
       <div class="section-line"></div>
@@ -1507,7 +1479,7 @@ footer {
   <div class="section-container">
     <div class="section-header fade-up">
       <div>
-        <div class="section-number">06 / certifications</div>
+        <div class="section-number">05 / certifications</div>
         <h2 class="section-title">Certifications</h2>
       </div>
       <div class="section-line"></div>
@@ -1528,12 +1500,12 @@ footer {
   </div>
 </section>
 
-<!-- ==================== PROJECTS ==================== -->
+<!-- ==================== PROJECTS (GABUNGAN) ==================== -->
 <section class="projects-section" id="projects">
   <div class="section-container">
     <div class="section-header fade-up">
       <div>
-        <div class="section-number">07 / projects</div>
+        <div class="section-number">06 / projects</div>
         <h2 class="section-title">Portfolio Projects</h2>
       </div>
       <div class="section-line"></div>
@@ -1545,11 +1517,13 @@ footer {
       <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full Stack</button>
     </div>
     <div class="projects-grid fade-up" id="projectsGrid">
-      <?php foreach($projects as $project): ?>
+      <?php foreach($all_projects as $project): ?>
       <div class="project-card" data-category="<?= $project['type'] ?>">
         <div class="project-img">
           <div class="project-img-gradient"></div>
-          <div class="project-img-placeholder"><i class="fas fa-<?= $project['type'] == 'android' ? 'mobile-alt' : 'globe' ?>"></i></div>
+          <div class="project-img-placeholder">
+            <i class="fas fa-<?= $project['type'] == 'android' ? 'mobile-alt' : ($project['type'] == 'fullstack' ? 'layer-group' : 'globe') ?>"></i>
+          </div>
           <span class="project-type-tag"><?= ucfirst($project['type']) ?></span>
         </div>
         <div class="project-body">
@@ -1578,7 +1552,7 @@ footer {
   <div class="section-container">
     <div class="section-header fade-up">
       <div>
-        <div class="section-number">08 / contact</div>
+        <div class="section-number">07 / contact</div>
         <h2 class="section-title">Let's Work Together</h2>
       </div>
       <div class="section-line"></div>
