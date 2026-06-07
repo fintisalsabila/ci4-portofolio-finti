@@ -155,7 +155,7 @@
         </form>
         <div style="margin-top: 2rem; text-align: center;">
             <p>📧 finti.sasa.sabila@gmail.com | 📞 +62 895-1618-9819</p>
-            <p>📍 Jakarta Utara, Indonesia</p>
+            <p>📍 Jakarta, Indonesia</p>
         </div>
     </div>
 </section>

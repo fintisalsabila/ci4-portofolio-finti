@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class ProjectModel extends Model
+{
+    protected $table = 'projects';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['title', 'category', 'description', 'tech_stack', 'image_url', 'demo_url', 'github_url', 'status', 'order'];
+    protected $useTimestamps = true;
+}

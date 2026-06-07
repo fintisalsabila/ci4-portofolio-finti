@@ -141,7 +141,7 @@ class Portfolio extends BaseController
     private function getContactInfo()
     {
         return [
-            'address' => 'Jakarta Utara, Indonesia',
+            'address' => 'Jakarta, Indonesia',
             'phone' => '+62 895-1618-9819',
             'email' => 'finti.sasa.sabila@gmail.com'
         ];

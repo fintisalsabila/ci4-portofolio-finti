@@ -440,17 +440,21 @@ nav {
   background: var(--gradient-accent);
 }
 .profile-avatar {
-  width: 72px; height: 72px;
-  border-radius: 16px;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #080c14;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--glow-strong);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-avatar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 6px var(--glow-strong);
 }
 .profile-name {
   font-family: var(--font-heading);
@@ -458,12 +462,14 @@ nav {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
+  text-align: center;
 }
 .profile-role {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--accent);
   letter-spacing: 0.5px;
+  text-align: center;
 }
 .profile-location {
   font-size: 0.78rem;
@@ -471,6 +477,7 @@ nav {
   margin-top: 0.8rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 }
 .tech-badges {
@@ -478,6 +485,7 @@ nav {
   flex-wrap: wrap;
   gap: 0.4rem;
   max-width: 320px;
+  justify-content: center;
 }
 .tech-badge {
   font-family: var(--font-mono);
@@ -1253,10 +1261,10 @@ footer {
     </div>
     <div class="hero-visual">
       <div class="profile-card">
-        <div class="profile-avatar">FSS</div>
+        <img src="<?= base_url('finti.jpg') ?>" alt="Finti Sasa Sabila" class="profile-avatar" onerror="this.src='https://via.placeholder.com/80x80?text=FSS'">
         <div class="profile-name">Finti Sasa Sabila</div>
         <div class="profile-role">Full Stack • Android • IT Support</div>
-        <div class="profile-location"><i class="fas fa-map-marker-alt"></i> Jakarta Utara, Indonesia</div>
+        <div class="profile-location"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</div>
         <div class="stats-row">
           <div class="stat-item">
             <div class="stat-num">19+</div>
@@ -1267,7 +1275,7 @@ footer {
             <div class="stat-label">Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">5</div>
+            <div class="stat-num">7</div>
             <div class="stat-label">Certs</div>
           </div>
         </div>
@@ -1300,9 +1308,9 @@ footer {
     </div>
     <div class="about-grid fade-up">
       <div class="about-text">
-        <p>Hi! I'm <strong>Finti Sasa Sabila</strong>, a passionate and aspiring developer based in Jakarta Utara, Indonesia. I have a strong desire to create innovative solutions and push the boundaries of technology.</p>
+        <p>Hi! I'm <strong>Finti Sasa Sabila</strong>, a passionate and aspiring developer based in Jakarta, Indonesia. I have a strong desire to create innovative solutions and push the boundaries of technology.</p>
         <p>With a deep love for coding and problem-solving, I constantly seek opportunities to learn and grow in this ever-evolving field. My experience spans across Android development, full stack web development, and IT support.</p>
-        <p>I've worked professionally as a <strong>Mobile Developer</strong> at PT Wahana Makmur Sejati (Maret 2024 - Feb 2025), as a <strong>Freelance Web Developer</strong> since 2021, and as a <strong>Back End Developer</strong> for various academic projects in 2023, building real-world applications that serve actual users.</p>
+        <p>I've worked professionally as a <strong>Full Stack Developer</strong> at Politeknik STMI Jakarta, as a <strong>Mobile Developer</strong> at PT Wahana Makmur Sejati, and as a <strong>Freelance Web Developer</strong> building real-world applications that serve actual users.</p>
       </div>
       <div class="about-highlights">
         <div class="highlight-item">
@@ -1355,9 +1363,13 @@ footer {
           <span class="skill-cat-name">Mobile Development</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['mobile'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Android Studio</span>
+          <span class="skill-tag">XML Layout</span>
+          <span class="skill-tag">Retrofit</span>
+          <span class="skill-tag">MVVM</span>
+          <span class="skill-tag">Firebase</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1366,9 +1378,13 @@ footer {
           <span class="skill-cat-name">Backend & Server</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['backend'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">CodeIgniter 4</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">RESTful API</span>
+          <span class="skill-tag">MySQL</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1377,9 +1393,13 @@ footer {
           <span class="skill-cat-name">Frontend</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['frontend'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">jQuery</span>
+          <span class="skill-tag">AJAX</span>
+          <span class="skill-tag">React</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1388,9 +1408,11 @@ footer {
           <span class="skill-cat-name">Tools & Platforms</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['tools'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Android Studio</span>
+          <span class="skill-tag">XAMPP</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1399,9 +1421,10 @@ footer {
           <span class="skill-cat-name">System Admin</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['system'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">Server Config</span>
+          <span class="skill-tag">DB Admin</span>
+          <span class="skill-tag">API Integration</span>
+          <span class="skill-tag">Troubleshooting</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1410,9 +1433,12 @@ footer {
           <span class="skill-cat-name">Soft Skills</span>
         </div>
         <div class="skill-tags">
-          <?php foreach($skills['softskills'] as $skill): ?>
-          <span class="skill-tag"><?= $skill ?></span>
-          <?php endforeach; ?>
+          <span class="skill-tag">Problem-Solving</span>
+          <span class="skill-tag">Teamwork</span>
+          <span class="skill-tag">Time Management</span>
+          <span class="skill-tag">Communication</span>
+          <span class="skill-tag">Adaptability</span>
+          <span class="skill-tag">Detail-Oriented</span>
         </div>
       </div>
     </div>
@@ -1430,23 +1456,58 @@ footer {
       <div class="section-line"></div>
     </div>
     <div class="timeline fade-up">
-      <?php foreach($experiences as $exp): ?>
+      <!-- Full Stack Developer - Politeknik STMI Jakarta -->
       <div class="timeline-item">
         <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
         <div class="timeline-content">
           <div class="timeline-meta">
-            <span class="timeline-company"><?= $exp['company'] ?></span>
-            <span class="timeline-period"><?= $exp['period'] ?></span>
+            <span class="timeline-company">Politeknik STMI Jakarta</span>
+            <span class="timeline-period">Dec 2024 – Jun 2025</span>
           </div>
-          <div class="timeline-role"><?= $exp['title'] ?></div>
+          <div class="timeline-role">Full Stack Developer · Contract</div>
           <ul class="timeline-desc">
-            <?php foreach($exp['description'] as $desc): ?>
-            <li><?= $desc ?></li>
-            <?php endforeach; ?>
+            <li>Developed 5 study-program websites (TRO, ABO, TIO, TKP, SIIO), improving online program visibility and information accessibility.</li>
+            <li>Built an SPM (Quality Assurance Management) web application to support structured institutional reporting workflows.</li>
+            <li>Developed a TVET web platform to support vocational education program management and documentation.</li>
+            <li>Built the LSP (Professional Certification Body) website, enabling digital certification and assessor management.</li>
+            <li>Developed an Android-based e-learning application to support mobile learning for students and instructors.</li>
           </ul>
         </div>
       </div>
-      <?php endforeach; ?>
+
+      <!-- Mobile Application Developer - PT Wahana Makmur Sejati -->
+      <div class="timeline-item">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-company">PT Wahana Makmur Sejati</span>
+            <span class="timeline-period">Mar 2024 – Feb 2025</span>
+          </div>
+          <div class="timeline-role">Mobile Application Developer · Internship</div>
+          <ul class="timeline-desc">
+            <li>Reduced manual form usage by 80% by developing the Android Mechanic Audit Tools application.</li>
+            <li>Accelerated tool ordering response time by 40% by building the Android Mechanic Order Tools application.</li>
+            <li>Designed the Android Mechanic Training Registration application and Web Services (Node.js + MySQL) for a mobile-backend integrated training registration system.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Web Developer - Freelance -->
+      <div class="timeline-item">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="timeline-company">Freelance</span>
+            <span class="timeline-period">Aug 2022 – Mar 2023</span>
+          </div>
+          <div class="timeline-role">Web Developer · Freelance</div>
+          <ul class="timeline-desc">
+            <li>Cut manual administration time by 50% by building a church administration web system managing 150+ active congregation records, including baptism registration and member data management.</li>
+            <li>Handled an average of 200+ monthly transactions by developing a motorcycle service administration app with online booking, repair history, and customer management features.</li>
+            <li>Developed an employee KPI web system for PT DKB with assessment input, sub-criteria, weight calculation, and final score features for structured performance evaluation.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1462,14 +1523,18 @@ footer {
       <div class="section-line"></div>
     </div>
     <div class="edu-grid fade-up">
-      <?php foreach($education as $edu): ?>
       <div class="edu-card">
-        <div class="edu-icon"><i class="fas fa-<?= $edu['icon'] ?>"></i></div>
-        <div class="edu-degree"><?= $edu['degree'] ?></div>
-        <div class="edu-school"><?= $edu['university'] ?></div>
-        <div class="edu-period"><?= $edu['year'] ?></div>
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div class="edu-degree">Applied Bachelor's Degree: Industrial Automotive Information Systems (GPA 3.77)</div>
+        <div class="edu-school">POLITEKNIK STMI JAKARTA · Jakarta</div>
+        <div class="edu-period">Sep 2021 – Jul 2025</div>
       </div>
-      <?php endforeach; ?>
+      <div class="edu-card">
+        <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="edu-degree">Back-End Developer Program</div>
+        <div class="edu-school">DBS FOUNDATION · Online</div>
+        <div class="edu-period">Mar – Sep 2023</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1485,22 +1550,60 @@ footer {
       <div class="section-line"></div>
     </div>
     <div class="cert-grid fade-up">
-      <?php foreach($certifications as $cert): ?>
       <div class="cert-card">
-        <div class="cert-icon <?= $cert['icon'] ?>">
-          <i class="fas fa-<?= $cert['icon'] == 'blue' ? 'server' : ($cert['icon'] == 'green' ? 'laptop-code' : 'android') ?>"></i>
-        </div>
+        <div class="cert-icon blue"><i class="fas fa-chart-line"></i></div>
         <div>
-          <div class="cert-name"><?= $cert['name'] ?></div>
-          <div class="cert-org"><?= $cert['provider'] ?> · <?= $cert['date'] ?></div>
+          <div class="cert-name">Penyusunan Proses Bisnis Sistem Informasi Di Industri Manufaktur</div>
+          <div class="cert-org">BNSP · Jun 2026</div>
         </div>
       </div>
-      <?php endforeach; ?>
+      <div class="cert-card">
+        <div class="cert-icon green"><i class="fab fa-python"></i></div>
+        <div>
+          <div class="cert-name">Python 3 Certification</div>
+          <div class="cert-org">CoderPad · <a href="https://github.com/fintisalsabila/Sertifikat/blob/main/Python/Certification.pdf" target="_blank" style="color: var(--accent);">View Certificate</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon purple"><i class="fab fa-react"></i></div>
+        <div>
+          <div class="cert-name">MERN Stack Certification</div>
+          <div class="cert-org">MongoDB University · <a href="https://github.com/fintisalsabila/Sertifikat/blob/main/MERN%20Stack/6250724_1716967891.pdf" target="_blank" style="color: var(--accent);">View Certificate</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon blue"><i class="fab fa-aws"></i></div>
+        <div>
+          <div class="cert-name">Architecting on AWS</div>
+          <div class="cert-org">Amazon Web Services · <a href="https://github.com/fintisalsabila/Sertifikat/blob/main/AWS/Architecting%20in%20AWS.pdf" target="_blank" style="color: var(--accent);">View Certificate</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon green"><i class="fas fa-laptop-code"></i></div>
+        <div>
+          <div class="cert-name">Full Stack Web Development</div>
+          <div class="cert-org">Harisenin Coding Camp · 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon purple"><i class="fab fa-android"></i></div>
+        <div>
+          <div class="cert-name">Meta Android Developer</div>
+          <div class="cert-org">Coursera (Meta) · Aug 2023</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon blue"><i class="fas fa-headset"></i></div>
+        <div>
+          <div class="cert-name">IT Support Specialization</div>
+          <div class="cert-org">Coursera (Google) · Aug 2023</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== PROJECTS (GABUNGAN) ==================== -->
+<!-- ==================== PROJECTS ==================== -->
 <section class="projects-section" id="projects">
   <div class="section-container">
     <div class="section-header fade-up">
@@ -1514,7 +1617,6 @@ footer {
       <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
       <button class="filter-btn" onclick="filterProjects('web', this)">Web</button>
       <button class="filter-btn" onclick="filterProjects('android', this)">Android</button>
-      <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full Stack</button>
     </div>
     <div class="projects-grid fade-up" id="projectsGrid">
       <?php foreach($all_projects as $project): ?>
@@ -1522,7 +1624,7 @@ footer {
         <div class="project-img">
           <div class="project-img-gradient"></div>
           <div class="project-img-placeholder">
-            <i class="fas fa-<?= $project['type'] == 'android' ? 'mobile-alt' : ($project['type'] == 'fullstack' ? 'layer-group' : 'globe') ?>"></i>
+            <i class="fas fa-<?= $project['type'] == 'android' ? 'mobile-alt' : 'globe' ?>"></i>
           </div>
           <span class="project-type-tag"><?= ucfirst($project['type']) ?></span>
         </div>
@@ -1635,7 +1737,7 @@ footer {
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-text">© 2024 Finti Sasa Sabila · Built with ❤️ using CodeIgniter 4</div>
+    <div class="footer-text">© 2025 Finti Sasa Sabila</div>
     <div class="footer-socials">
       <a href="mailto:finti.sasa.sabila@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
